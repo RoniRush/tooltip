@@ -18,8 +18,8 @@ export const Tooltip = (props: TooltipProps) => {
         }
         if (showTooltip === ToolTip_Display.SHOW) {
             const showTimer = setTimeout(() => {
-                //activated.current = false;
-                //setShowTooltip(ToolTip_Display.HIDE);
+                activated.current = false;
+                setShowTooltip(ToolTip_Display.HIDE);
             }, props.duration)
             return () => clearTimeout(showTimer);
         }
