@@ -26,25 +26,20 @@ export const Tooltip = (props: TooltipProps) => {
         setShowTooltip(ToolTip_Display.WAIT);
     }
 
+    const content = <span>
+        {props.children}
+        {showTooltip === ToolTip_Display.SHOW && <div>{props.content}</div>}
+    </span>
     let triggeredToolTip;
     switch (props.trigger) {
         case ToolTip_Trigger.FOCUS:
-            triggeredToolTip = <div className='onFocus tooltip-wrapper' onFocus={handleTrigger}>
-                {props.children}
-                {showTooltip === ToolTip_Display.SHOW && <div>{props.content}</div>}
-            </div>;
+            triggeredToolTip = <div className='onFocus tooltip-wrapper' onFocus={handleTrigger}>{content}</div>;
             break;
         case ToolTip_Trigger.CLICK:
-            triggeredToolTip = <div className='onClick tooltip-wrapper' onClick={handleTrigger}>
-                {props.children}
-                {showTooltip === ToolTip_Display.SHOW && <div>{props.content}</div>}
-            </div>;
+            triggeredToolTip = <div className='onClick tooltip-wrapper' onClick={handleTrigger}>{content}</div>;
             break;
         case ToolTip_Trigger.HOVER:
-            triggeredToolTip = <div className='onHover tooltip-wrapper' onMouseEnter={handleTrigger} >
-                {props.children}
-                {showTooltip === ToolTip_Display.SHOW && <div>{props.content}</div>}
-            </div>;
+            triggeredToolTip = <div className='onHover tooltip-wrapper' onMouseEnter={handleTrigger} >{content}</div>;
             break;
         default:
             triggeredToolTip = <div></div>
