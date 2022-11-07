@@ -2,7 +2,7 @@ import {ToolTip_Location, ToolTip_Trigger} from "./types";
 
 export const defaultPropsValues = {
     content: 'tip',
-    location: ToolTip_Location.UP,
+    location: ToolTip_Location.LEFT,
     trigger: ToolTip_Trigger.HOVER,
     duration: 5000,
     delay: 200,

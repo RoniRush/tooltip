@@ -1,4 +1,48 @@
+:root {
+    --direction-border: 23px
+}
+
 .tooltip-wrapper {
     display: inline-block;
     position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px;
+    color: white;
+    background: black;
+    font-size: 14px;
+    font-family: sans-serif;
+    line-height: 1;
+    z-index: 100;
+    white-space: nowrap;
+    animation-duration: 3s;
+    animation-name: moveLeft300px;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.tooltip.up {
+    top: calc(var(--direction-border)* -1);
+}
+
+.tooltip.down {
+    bottom: calc(var(--direction-border)* -1);
+}
+
+.tooltip.right {
+    left: calc(100% + var(--direction-border));
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+}
+
+.tooltip.left {
+    left: auto;
+    right: calc(100% + var(--direction-border));
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
 }

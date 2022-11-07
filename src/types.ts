@@ -1,8 +1,8 @@
 export enum ToolTip_Location {
-    UP,
-    DOWN,
-    RIGHT,
-    LEFT,
+    UP='up',
+    DOWN='down',
+    RIGHT='right',
+    LEFT='left',
 }
 
 export enum ToolTip_Trigger {
