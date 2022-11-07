@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Tooltip} from "./components/Tooltip";
+import {ToolTip_Trigger} from "./types";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tooltip trigger={ToolTip_Trigger.CLICK} delay={1000} duration={2000} content={"yay!!"}>
+          <span style={{fontSize: '64px'}}>🦆</span>
+      </Tooltip>
     </div>
   );
 }
