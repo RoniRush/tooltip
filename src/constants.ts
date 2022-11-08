@@ -1,20 +1,52 @@
-import {ToolTip_Location, ToolTip_Trigger} from "./types";
+export const MAX_DELAY = 10000;
+export const MAX_DURATION = 7000;
+export const MIN_DELAY = 0;
+export const MIN_DURATION = 2000;
+
+export enum ToolTip_Location {
+    UP = 'up',
+    DOWN = 'down',
+    RIGHT = 'right',
+    LEFT = 'left',
+}
+
+export enum ToolTip_Trigger {
+    HOVER,
+    CLICK,
+    FOCUS,
+}
+
+export enum ToolTip_Display {
+    SHOW,
+    HIDE,
+    WAIT,
+}
+
+export enum Transition_Options {
+    FADE = 'fade',
+    ZOOM = 'zoom',
+    GRADIENT = 'gradient',
+    WIGGLE = 'wiggle',
+}
 
 export const defaultPropsValues = {
     content: 'tip',
     location: ToolTip_Location.LEFT,
     trigger: ToolTip_Trigger.HOVER,
-    duration: 5000,
+    duration: 20000,
     delay: 200,
-    animation: '', // should update
+    animation: {
+        type: Transition_Options.FADE,
+        durationInSec: 3,
+    },
     style: {
-        backgroundColor: 'skyblue',
-        color: 'black',
+        backgroundColor: 'black',
+        color: 'white',
         border: '',
-        border_radius: '10px',
-        margin: '0px',
-        padding: '2px',
-        font_size: '12px',
+        border_radius: '3px',
+        margin: '2px',
+        padding: '4px',
+        font_size: '15px',
         font_family: 'sans-serif',
     },
     formatter: '', // should update

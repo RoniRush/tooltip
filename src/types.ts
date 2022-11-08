@@ -1,24 +1,8 @@
-export enum ToolTip_Location {
-    UP='up',
-    DOWN='down',
-    RIGHT='right',
-    LEFT='left',
-}
+import {ToolTip_Location, ToolTip_Trigger, Transition_Options} from "./constants";
 
-export enum ToolTip_Trigger {
-    HOVER,
-    CLICK,
-    FOCUS,
-}
 
-export enum ToolTip_Display {
-    SHOW,
-    HIDE,
-    WAIT,
-}
-
-export type ToolTip_styling = {
-    backgroundColor? : string,
+export type ToolTip_Styling = {
+    backgroundColor?: string,
     color?: string,
     border?: string,
     border_radius?: string,
@@ -31,11 +15,16 @@ export type ToolTip_styling = {
 export type TooltipProps = {
     content: any,
     children?: JSX.Element,
-    location?: ToolTip_Location,
-    trigger?: ToolTip_Trigger,
-    duration?: number,
-    delay?: number,
-    animation?: any, // should understand what is it
-    style?: ToolTip_styling,
-    formatter?: any, // should ask Segev
+    location: ToolTip_Location,
+    trigger: ToolTip_Trigger,
+    duration: number,
+    delay: number,
+    animation: TransitionProps,
+    style: ToolTip_Styling,
+    formatter: any, // should ask Segev
+}
+
+export type TransitionProps = {
+    type?: Transition_Options,
+    durationInSec?: number,
 }
