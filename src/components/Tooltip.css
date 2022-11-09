@@ -19,10 +19,12 @@
     font-family: sans-serif;
     line-height: 1;
     z-index: 100;
-    white-space: normal;
+    white-space: nowrap;
     animation-duration: 3s;
     animation-name: fade;
     animation-direction: alternate;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 @keyframes fade {

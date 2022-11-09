@@ -21,10 +21,12 @@ export type TooltipProps = {
     delay: number,
     animation: TransitionProps,
     style: ToolTip_Styling,
-    formatter: any, // should ask Segev
+    formatter: {maxHeight?: string, maxWidth?: string},
+    hideOnClick: boolean
 }
 
 export type TransitionProps = {
     type?: Transition_Options,
     durationInSec?: number,
 }
+

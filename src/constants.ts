@@ -29,6 +29,14 @@ export enum Transition_Options {
     WIGGLE = 'wiggle',
 }
 
+
+export enum Event_Options  {
+    CLICK = 'click',
+    FOCUS = 'focus',
+    HOVER = 'mouseenter',
+    MOUSE_DOWN = 'mousedown',
+}
+
 export const defaultPropsValues = {
     content: 'tip',
     location: ToolTip_Location.LEFT,
@@ -49,5 +57,9 @@ export const defaultPropsValues = {
         font_size: '15px',
         font_family: 'sans-serif',
     },
-    formatter: '', // should update
+    formatter: {
+        maxHeight: '200px',
+        maxWidth: '200px',
+    },
+    hideOnClick: false,
 }
