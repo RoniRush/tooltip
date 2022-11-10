@@ -38,7 +38,8 @@ export const getUpdatedProps = (props: Partial<TooltipProps>): TooltipProps => {
         animation: getUpdatedAnimation(),
         style: getUpdatedStyle(),
         formatter: getUpdatedFormatter(),
-        hideOnClick: props.hideOnClick || defaultPropsValues.hideOnClick
+        hideOnClick: props.hideOnClick || defaultPropsValues.hideOnClick,
+        onlyEllipsis: props.onlyEllipsis || defaultPropsValues.onlyEllipsis,
     }
     if (props.children) return {...newProps, children: props.children}
     return newProps;

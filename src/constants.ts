@@ -1,3 +1,5 @@
+import {TooltipProps} from "./types";
+
 export const MAX_DELAY = 10000;
 export const MAX_DURATION = 7000;
 export const MIN_DELAY = 0;
@@ -37,7 +39,7 @@ export enum Event_Options  {
     MOUSE_DOWN = 'mousedown',
 }
 
-export const defaultPropsValues = {
+export const defaultPropsValues : TooltipProps = {
     content: 'tip',
     location: ToolTip_Location.LEFT,
     trigger: ToolTip_Trigger.HOVER,
@@ -62,4 +64,5 @@ export const defaultPropsValues = {
         maxWidth: '200px',
     },
     hideOnClick: false,
+    onlyEllipsis: false,
 }

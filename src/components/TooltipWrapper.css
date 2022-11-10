@@ -1,5 +1,5 @@
 :root {
-    --direction-border: 23px
+    --direction-border: 3px
 }
 
 .tooltip-wrapper {
@@ -18,7 +18,7 @@
     font-size: 14px;
     font-family: sans-serif;
     line-height: 1;
-    z-index: 100;
+    z-index: 10000;
     white-space: nowrap;
     animation-duration: 3s;
     animation-name: fade;

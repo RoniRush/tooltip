@@ -1,4 +1,4 @@
-import {ToolTip_Location, ToolTip_Trigger, Transition_Options} from "./constants";
+import {ToolTip_Display, ToolTip_Location, ToolTip_Trigger, Transition_Options} from "./constants";
 
 
 export type ToolTip_Styling = {
@@ -22,8 +22,11 @@ export type TooltipProps = {
     animation: TransitionProps,
     style: ToolTip_Styling,
     formatter: {maxHeight?: string, maxWidth?: string},
-    hideOnClick: boolean
+    hideOnClick: boolean,
+    onlyEllipsis: boolean,
 }
+
+export type InnerTooltipType = TooltipProps & {showTooltip: ToolTip_Display}
 
 export type TransitionProps = {
     type?: Transition_Options,
