@@ -1,6 +1,6 @@
 import styled, {css, keyframes} from "styled-components";
-import {InnerTooltipType} from "../types";
-import {Transition_Options} from "../constants";
+import {InnerTooltipType} from "../../types";
+import {Transition_Options} from "../../constants";
 
 const direction_border = '10px'
 

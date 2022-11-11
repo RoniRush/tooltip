@@ -2,7 +2,7 @@ import {TooltipProps} from "./types";
 
 export const MAX_DELAY = 10000;
 export const MAX_DURATION = 7000;
-export const MIN_DELAY = 0;
+export const MIN_DELAY = 1;
 export const MIN_DURATION = 2000;
 
 export enum ToolTip_Location {
@@ -51,7 +51,7 @@ export const defaultPropsValues : TooltipProps = {
     },
     style: {
         backgroundColor: 'black',
-        color: 'red',
+        color: 'white',
         border_radius: '3px',
         margin: '2px',
         padding: '4px',
