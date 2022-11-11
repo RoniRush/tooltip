@@ -13,7 +13,6 @@ export const getUpdatedProps = (props: Partial<TooltipProps>): TooltipProps => {
         return {
             backgroundColor: props.style?.backgroundColor || defaultPropsValues.style.backgroundColor,
             color: props.style?.color || defaultPropsValues.style.color,
-            border: props.style?.border || defaultPropsValues.style.border,
             border_radius: props.style?.border_radius || defaultPropsValues.style.border_radius,
             margin: props.style?.margin || defaultPropsValues.style.margin,
             padding: props.style?.padding || defaultPropsValues.style.padding,

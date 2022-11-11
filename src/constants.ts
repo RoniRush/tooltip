@@ -51,8 +51,7 @@ export const defaultPropsValues : TooltipProps = {
     },
     style: {
         backgroundColor: 'black',
-        color: 'white',
-        border: '',
+        color: 'red',
         border_radius: '3px',
         margin: '2px',
         padding: '4px',

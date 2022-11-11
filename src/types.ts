@@ -4,7 +4,6 @@ import {ToolTip_Display, ToolTip_Location, ToolTip_Trigger, Transition_Options} 
 export type ToolTip_Styling = {
     backgroundColor?: string,
     color?: string,
-    border?: string,
     border_radius?: string,
     margin?: string,
     padding?: string,

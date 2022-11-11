@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import './TooltipWrapper.css';
 import {TooltipProps} from "../types";
 import {getUpdatedProps} from "../helpers/getFullProps";
 import {Event_Options, ToolTip_Display, ToolTip_Trigger} from "../constants";
-import {InnerTooltip} from "./Tooltip";
+import {Tooltip} from "./Tooltip";
+import {StyledTooltipWrapper} from "./TooltipWrapper.styled";
 
 export const TooltipWrapper = (props: Partial<TooltipProps>) => {
     const [showTooltip, setShowTooltip] = useState(ToolTip_Display.HIDE);
@@ -43,19 +43,20 @@ export const TooltipWrapper = (props: Partial<TooltipProps>) => {
     let triggeredToolTip;
     switch (updatedProps.trigger) {
         case ToolTip_Trigger.FOCUS:
-            triggeredToolTip = <div className='onFocus tooltip-wrapper' onMouseDown={(event)=>toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN)}
-                                    onFocus={(event)=>toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN)}><InnerTooltip {...{...updatedProps}} showTooltip={showTooltip}/></div>;
+            triggeredToolTip = <StyledTooltipWrapper className='onFocus tooltip-wrapper' onMouseDown={(event)=>toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN)}
+                                    onFocus={(event)=>toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN)}><Tooltip {...{...updatedProps}} showTooltip={showTooltip}/></StyledTooltipWrapper>;
             break;
         case ToolTip_Trigger.CLICK:
-            triggeredToolTip = <div className='onClick tooltip-wrapper' onClick={(event)=>toggleTooltip(event, Event_Options.CLICK, Event_Options.CLICK)}><InnerTooltip {...{...updatedProps}} showTooltip={showTooltip}/></div>;
+            triggeredToolTip = <StyledTooltipWrapper className='onClick tooltip-wrapper' onClick={(event)=>toggleTooltip(event, Event_Options.CLICK, Event_Options.CLICK)}><Tooltip {...{...updatedProps}} showTooltip={showTooltip}/></StyledTooltipWrapper>;
             break;
         case ToolTip_Trigger.HOVER:
-            triggeredToolTip = <div className='onHover tooltip-wrapper' onClick={(event)=>toggleTooltip(event, Event_Options.HOVER, Event_Options.CLICK)}
-                                    onMouseEnter={(event)=>toggleTooltip(event, Event_Options.HOVER, Event_Options.CLICK)}><InnerTooltip {...{...updatedProps}} showTooltip={showTooltip}/></div>;
+            triggeredToolTip = <StyledTooltipWrapper className='onHover tooltip-wrapper' onClick={(event)=>toggleTooltip(event, Event_Options.HOVER, Event_Options.CLICK)}
+                                    onMouseEnter={(event)=>toggleTooltip(event, Event_Options.HOVER, Event_Options.CLICK)}><Tooltip {...{...updatedProps}} showTooltip={showTooltip}/></StyledTooltipWrapper>;
             break;
         default:
-            triggeredToolTip = <div></div>
+            triggeredToolTip = <StyledTooltipWrapper></StyledTooltipWrapper>
     }
 
     return triggeredToolTip
 }
+
