@@ -1,8 +1,36 @@
-# Getting Started with Create React App
+# WELCOME to the most amazing reusable tooltip package.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to use the tooltip:
+- Use the tooltip as component in your react project.
+- The props should be as this interface *non of the properties is mendatory!*:
 
-## Available Scripts
+    content: any, //this is the content inside the tooltip
+    children?: JSX.Element, // this is the content where the tooltip is conected to 
+    location: UP / DOWN / LEFT / RIGHT, // will determain where the tooltip will appear. default is left
+    trigger: HOVER / CLICK / FOCUS, // will determain what will trigger the tooltip. default is hover
+    duration: number, // the amount of time tooltip will be displayed in milliseconds. default is 20000 
+    delay: number, // the amount of time it will take to the tooltip to appear in milliseconds. default is 200
+    animation: {
+          type: FADE / ZOOM / GRADIENT / WIGGLE
+          durationInSec
+    }, the effect that tooltip will use to appear. default is fade for 3s
+    style: {
+          backgroundColor: string, // default is black
+          color: string, // default is white
+          border_radius: string, // default is 3px
+          margin: string, // default is 2px
+          padding: string, // default is 4px
+          font_size: string, // default is 15px
+          font_family: string, // default is 'sans-serif'
+    },
+    formatter: {
+          maxHeight: string, 
+          maxWidth: string
+    }, // if tooltip content is stepping out of this size a scroller will be available in the tooltip. default is 200px
+    hideOnClick: boolean, // add the ability to close the tooltip using click. default is false
+    onlyEllipsis: boolean, // add the ability to display the tooltip only if the content it conected to has ellipsis over-flow. default is false
+
+
 
 In the project directory, you can run:
 
@@ -11,36 +39,3 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
