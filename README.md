@@ -1,5 +1,8 @@
 # WELCOME to the most amazing reusable tooltip package.
 
+## To run the project
+### `npm start`
+
 ## How to use the tooltip:
 - Use the tooltip as component in your react project.
 - The props should be as the next interface, **non of the properties is mandatory**
@@ -31,12 +34,12 @@
     hideOnClick: boolean, // add the ability to close the tooltip using click. default is false
     onlyEllipsis: boolean, // add the ability to display the tooltip only if the content it conected to has ellipsis over-flow. default is false
 ```
+## Usage:
 
+```js
+<Tooltip trigger={ToolTip_Trigger.FOCUS} delay={200} duration={6000} content={"A very COOL tooltip"} location={ToolTip_Location.DOWN} animation={{type: Transition_Options.GRADIENT}}>
+     <input type="text" style={{fontSize: '16px'}}></input>
+</Tooltip>
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
