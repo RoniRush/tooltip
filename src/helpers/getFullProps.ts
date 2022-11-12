@@ -30,8 +30,8 @@ export const getUpdatedProps = (props: Partial<TooltipProps>): TooltipProps => {
 
     const newProps = {
         trigger: props.trigger || defaultPropsValues.trigger,
-        duration: props.duration && props.duration< MAX_DURATION && props.duration > MIN_DURATION? props.duration: defaultPropsValues.duration,
-        delay: props.delay && props.delay< MAX_DELAY && props.delay > MIN_DELAY? props.delay: defaultPropsValues.delay,
+        duration: props.duration && props.duration <= MAX_DURATION && props.duration > MIN_DURATION? props.duration: defaultPropsValues.duration,
+        delay: props.delay && props.delay< MAX_DELAY && props.delay >= MIN_DELAY? props.delay: defaultPropsValues.delay,
         content: props.content || defaultPropsValues.content,
         location: props.location || defaultPropsValues.location,
         animation: getUpdatedAnimation(),
