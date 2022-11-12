@@ -18,7 +18,7 @@ function App() {
                 <span style={{fontSize: '64px'}}>🦆</span>
             </Tooltip>
             <div style={{height: '30px'}}></div>
-            <Tooltip trigger={ToolTip_Trigger.FOCUS} delay={200} duration={3000} content={"third!!"} location={ToolTip_Location.LEFT} animation={{type: Transition_Options.GRADIENT}} hideOnClick={true}>
+            <Tooltip style={{backgroundColor: 'red'}} trigger={ToolTip_Trigger.FOCUS} delay={200} duration={3000} content={"third!!"} location={ToolTip_Location.LEFT} animation={{type: Transition_Options.GRADIENT, durationInSec:5}} hideOnClick={true}>
                 <input type="text" style={{fontSize: '13px'}}></input>
             </Tooltip>
             <div style={{height: '30px'}}></div>

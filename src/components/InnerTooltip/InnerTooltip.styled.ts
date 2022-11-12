@@ -12,51 +12,51 @@ const fade = keyframes`
     opacity: 1;
   }`
 
-const zoom = (props: {translateY: string}) => keyframes`
+const zoom = (translateY: string) => keyframes`
   0% {
-    transform: scale(0, 0) translateY(${props.translateY});
+    transform: scale(0, 0) translateY(${translateY});
   }
   100% {
-    transform: scale(1, 1) translateY(${props.translateY});
+    transform: scale(1, 1) translateY(${translateY});
   }
 `
 
-const gradient = keyframes`
+const gradient = (backgroundColor: string | undefined) => keyframes`
   0% {
-    background-color: lightblue;
+    background-color: lightgray;
   }
   100% {
-    background-color: black
+    background-color: ${backgroundColor || 'black'}
   }`
 
-const wiggle = (props: {translateY: string}) => keyframes`
+const wiggle = (translateY: string) => keyframes`
   0%, 7% {
-    transform: rotate(0) translateY(${props.translateY}) ;
+    transform: rotate(0) translateY(${translateY}) ;
   }
   15% {
-    transform: rotate(-15deg) translateY(${props.translateY}) ;
+    transform: rotate(-15deg) translateY(${translateY}) ;
   }
   20% {
-    transform: rotate(10deg) translateY(${props.translateY});
+    transform: rotate(10deg) translateY(${translateY});
   }
   25% {
-    transform: rotate(-10deg) translateY(${props.translateY});
+    transform: rotate(-10deg) translateY(${translateY});
   }
   30% {
-    transform: rotate(6deg) translateY(${props.translateY}) ;
+    transform: rotate(6deg) translateY(${translateY}) ;
   }
   35% {
-    transform: rotate(-4deg) translateY(${props.translateY});
+    transform: rotate(-4deg) translateY(${translateY});
   }
   40%, 100% {
-    transform: rotate(0) translateY(${props.translateY}) ;
+    transform: rotate(0) translateY(${translateY}) ;
   }`
 
-const animation = (props: InnerTooltipType) => css`
+const animation = (props: InnerTooltipType & {translateY: string}) => css`
   ${props.animation.type === Transition_Options.ZOOM ?
-    zoom : props.animation.type === Transition_Options.FADE ?
+    zoom(props.translateY) : props.animation.type === Transition_Options.FADE ?
         fade : props.animation.type === Transition_Options.GRADIENT ?
-            gradient : wiggle} ${props.animation.durationInSec}s alternate
+            gradient(props.style.backgroundColor) : wiggle(props.translateY)} ${props.animation.durationInSec}s alternate
 `
 
 export const StyledTooltip = styled.span<InnerTooltipType & {translateY: string}>`
