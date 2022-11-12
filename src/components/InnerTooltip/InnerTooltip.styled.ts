@@ -67,6 +67,8 @@ export const StyledTooltip = styled.span<InnerTooltipType & {translateY: string}
   white-space: nowrap;
   overflow-y: scroll;
   overflow-x: scroll;
+  max-height: ${props => props.formatter.maxHeight};
+  max-width : ${props => props.formatter.maxWidth};
   padding: ${props => props.style.padding};
   margin: ${props => props.style.margin};
   color: ${props => props.style.color};

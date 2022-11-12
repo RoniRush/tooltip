@@ -9,7 +9,6 @@ export const InnerTooltip = (props: InnerTooltipType) => {
     const newProps: InnerTooltipType = {...props, ...getTooltipStyle(props)}
     const translateY = getTranslateY(props.location)
 
-    console.log('props.showTooltip', props.showTooltip)
     return <span>
         {props.children}
         {props.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(props) &&

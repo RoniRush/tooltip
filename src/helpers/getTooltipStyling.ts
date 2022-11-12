@@ -27,7 +27,7 @@ export const getTooltipStyle = (updatedProps: TooltipProps): {style: ToolTip_Sty
 export const getTranslateY = (location: ToolTip_Location) => {
     switch (location){
         case ToolTip_Location.DOWN: return '100%';
-        case ToolTip_Location.UP: return '-30%';
+        case ToolTip_Location.UP: return '-70%';
         default: return '-50%';
     }
 }
