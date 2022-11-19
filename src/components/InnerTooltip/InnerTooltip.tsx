@@ -7,13 +7,13 @@ import {StyledTooltip} from "./InnerTooltip.styled";
 
 export const InnerTooltip = (props: InnerTooltipType) => {
     const newProps: InnerTooltipType = {...props, ...getTooltipStyle(props)}
-    const translateY = getTranslateY(props.location)
+    const translateY = getTranslateY(newProps.location)
 
     return <span>
-        {props.children}
-        {props.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(props) &&
+        {newProps.children}
+        {newProps.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(newProps) &&
             <StyledTooltip data-testid="styledInnerTooltip" translateY={translateY}
-                           className={`tooltip ${props.location}`} {...newProps}>{props.content}</StyledTooltip>}
+                           className={`tooltip ${newProps.location}`} {...newProps}>{newProps.content}</StyledTooltip>}
     </span>
 }
 
